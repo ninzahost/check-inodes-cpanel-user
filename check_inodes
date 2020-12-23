@@ -1,0 +1,13 @@
+#!/bin/bash
+count=0
+cd /var/cpanel/users
+for user in *
+do
+if [[ $user != "system" ]]
+then
+inodes=$(whmapi1 accountsummary user="$user" | grep "inodesused: " | awk '{print $2}')
+printf "$user : $inodes\n"
+count=`expr $count + 1`
+fi
+done
+##echo $count
