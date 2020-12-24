@@ -15,4 +15,4 @@ chmod 755 check_inodes
 
 By short :- 
 
-./check_inodes | sort -t: -k 2
+./check_inodes | sort -t: -k 2n
