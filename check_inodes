@@ -17,7 +17,7 @@ do
 if [[ $user != "system" ]]
 then
 inodes=$(whmapi1 accountsummary user="$user" | grep "inodesused: " | awk '{print $2}')
-printf "$Yellow $user $Color_Off : $Red $inodes $Color_Off\n"
+printf "$Yellow$user : $inodes$Color_Off\n"
 count=`expr $count + 1`
 fi
 done
